@@ -6,7 +6,19 @@ const userRoutes = require('./routes/userRoutes');
 const waterRoutes = require('./routes/waterRoutes');
 const path = require('path');
 
+// Завантажуємо .env
 dotenv.config();
+
+// ДІАГНОСТИКА - щоб побачити чи завантажився ключ
+console.log('🔍 Environment variables loaded:');
+console.log('GEMINI_API_KEY exists:', !!process.env.GEMINI_API_KEY);
+if (process.env.GEMINI_API_KEY) {
+  console.log('GEMINI_API_KEY:', process.env.GEMINI_API_KEY.substring(0, 15) + '...');
+} else {
+  console.log('❌ GEMINI_API_KEY is missing!');
+}
+console.log('');
+
 const app = express();
 app.use(cors());
 app.use(express.json());

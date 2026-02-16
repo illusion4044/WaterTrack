@@ -45,3 +45,41 @@ progress { width:100%; height:14px; }
   align-self: flex-end;
   font-size: 11px;
 }
+
+.ai-chat {
+  margin-top: 30px;
+}
+
+.chat-box {
+  height: 260px;
+  background: #f4fbff;
+  padding: 10px;
+  border-radius: 8px;
+  overflow-y: auto;
+}
+
+.msg {
+  padding: 8px 12px;
+  border-radius: 14px;
+  margin-bottom: 6px;
+  max-width: 80%;
+}
+
+.msg.user {
+  background: #d6f0ff;
+  margin-left: auto;
+}
+
+.msg.ai {
+  background: #eaeaea;
+}
+
+.chat-input {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+}
