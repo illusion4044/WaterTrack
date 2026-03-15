@@ -5,7 +5,7 @@ export default function AICompanion({ user }) {
   const [messages, setMessages] = useState([
     { 
       from: 'ai', 
-      text: 'Привіт! Я твій ШІ-компаньйон 💧 Запитай щось про воду або просто поговоримо.' 
+      text: 'Привіт! Я твій ШІ-компаньйон 💧 Запитай щось про воду.' 
     }
   ]);
   const [input, setInput] = useState('');
@@ -35,7 +35,7 @@ export default function AICompanion({ user }) {
       
       setMessages(prev => [
         ...prev,
-        { from: 'ai', text: res.advice || '🤖 Не зміг відповісти' }
+        { from: 'ai', text: res.advice || ' Не зміг відповісти' }
       ]);
     } catch (err) {
       console.error('❌ AI Error:', err);
