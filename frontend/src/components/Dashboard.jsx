@@ -62,12 +62,24 @@ export default function Dashboard({ user }) {
             {entries
               .slice()
               .reverse()
-              .map(entry => (
-                <li key={entry._id}>
-                  <strong>{entry.amount} ml</strong> —{" "}
-                  {new Date(entry.date).toLocaleTimeString()}
-                </li>
-              ))}
+              .map(entry => {
+                const date = new Date(entry.date);
+                const time = date.toLocaleTimeString('uk-UA', { 
+                  hour: '2-digit', 
+                  minute: '2-digit' 
+                });
+                const dateStr = date.toLocaleDateString('uk-UA', {
+                  day: '2-digit',
+                  month: '2-digit'
+                });
+                const isToday = date.toDateString() === new Date().toDateString();
+
+                return (
+                  <li key={entry._id}>
+                    <strong>{entry.amount} ml</strong> —  {time} ·  {isToday ? 'Сьогодні' : dateStr}
+                  </li>
+                );
+              })}
           </ul>
         )}
       </div>
