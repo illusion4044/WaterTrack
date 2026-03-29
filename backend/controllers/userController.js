@@ -7,6 +7,7 @@ exports.register = async (req, res) => {
   const { username, password } = req.body;
   try {
     if (!username || !password) return res.status(400).json({ message: 'Missing fields' });
+    if (password.length < 4) return res.status(400).json({ message: 'Пароль має бути не менше 4 символів' });
     const exists = await User.findOne({ username });
     if (exists) return res.status(400).json({ message: 'User exists' });
     const user = await User.create({ username, password });
