@@ -5,14 +5,14 @@ export default function AICompanion({ user }) {
   const [messages, setMessages] = useState([
     { 
       from: 'ai', 
-      text: 'Привіт! Я твій ШІ-компаньйон 💧 Запитай щось про воду.' 
+      text: 'Привіт! Я твій ШІ-компаньйон ! Запитай щось про воду.' 
     }
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const chatBoxRef = useRef(null);
 
-  // Auto-scroll до низу при нових повідомленнях
+
   useEffect(() => {
     if (chatBoxRef.current) {
       chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
@@ -56,7 +56,7 @@ export default function AICompanion({ user }) {
       padding: '15px',
       backgroundColor: 'white'
     }}>
-      <h4 style={{ margin: '0 0 10px 0' }}>💧 AI Companion</h4>
+      <h4 style={{ margin: '0 0 10px 0' }}> AI Companion</h4>
       
       <div 
         ref={chatBoxRef}
